@@ -1,0 +1,1 @@
+export const ANIMES_PROVIDER_URL = "https://www3.animeflv.net"

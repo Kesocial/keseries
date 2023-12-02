@@ -25,3 +25,12 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+main{
+  display: flex;
+  place-items: center;
+  place-content: center;
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+  flex-direction: column;
+}
