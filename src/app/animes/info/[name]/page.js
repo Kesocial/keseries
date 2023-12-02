@@ -2,10 +2,10 @@ import { Providers } from "@/app/providers"
 import {SeriesHeader} from "@/components/Series/SeriesHeader"
 import {SeriesEpisodes} from "@/components/Series/SeriesEpisodes"
 import {SeriesDescription} from "@/components/Series/SeriesDescription"
+import { URL_BASE } from "@/const"
 async function getAnime(name){
   try {
-    const url = `${process.env.URL}:${process.env.PORT}/`
-    const animes = await fetch(url+"api/animes/info/"+name, { next: { revalidate: 1 } })
+    const animes = await fetch(URL_BASE+"api/animes/info/"+name, { next: { revalidate: 1 } })
     if (!animes.ok) throw new Error('Failed to fetch animes API')
     return animes.json()
   } catch (error) {

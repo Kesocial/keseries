@@ -3,7 +3,7 @@ import { EpisodeViewer } from "@/components/EpisodeViewer/EpisodeViewer"
 import { TabsCustom } from "@/components/TabsCustom"
 import { Viewer } from "@/components/Viewer/Viewer"
 async function getProviders(name){
-  const animes = await fetch(`${process.env.URL}api/animes/providers/${name}`, { next: { revalidate: 2 } })
+  const animes = await fetch(`${URL_BASE}api/animes/providers/${name}`, { next: { revalidate: 2 } })
   if (!animes.ok) throw new Error('Failed to fetch animes API')
   return animes.json()
 }

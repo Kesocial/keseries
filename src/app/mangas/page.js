@@ -2,7 +2,7 @@ import { Providers } from "../providers"
 import { TabsCustom } from "@/components/TabsCustom"
 import { ListaCards } from "@/components/Card/ListaCards"
 async function getAnimes(){
-  const animes = await fetch(process.env.URL+"api/animes", { next: { revalidate: 60000 } })
+  const animes = await fetch(URL_BASE+"api/animes", { next: { revalidate: 60000 } })
   if (!animes.ok) throw new Error('Failed to fetch animes API')
   return animes.json()
 }
