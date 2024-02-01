@@ -35,7 +35,7 @@ export async function GET() {
         const animesJSHandle = await page.$(".ListAnimes")
         const listaAnimes = await getListaAnimes({animesJSHandle,titleSelector:".Title",labelSelector:".Type",srcSelector:"img"})
         return listaAnimes.map(anime=>{
-          anime.href = anime.href.replace("/anime","")
+          anime.href = anime.href.replace("/anime","/info")
           return anime 
         })
       })()

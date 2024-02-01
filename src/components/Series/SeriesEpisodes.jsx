@@ -5,15 +5,17 @@ import { useState } from "react"
 export function SeriesEpisodes({episodes: _episodes,portada}){
   const [episodes,setEpisodes] = useState(_episodes)
   return (
-    <section className="mt-4 w-full flex flex-col gap-2 p-5">
-      <Button onClick={()=>{
+    <>
+    <Button className="w-full" onClick={()=>{
         setEpisodes([...episodes.reverse()])
       }}>Reverse</Button>
+    <section className="mt-4 w-full flex flex-wrap gap-2 p-5 place-content-center">
+      
       {episodes?.map(episode=>(
-      <Link className="w-full" key={episode.episodio+episode.href}>
-        <Card classNames={{base:"w-full !max-w-none"}} 
+      <Link className="w-full max-w-[400px] " key={episode.episodio+episode.href}>
+        <Card classNames={{base:"w-full !max-w-none min-h-[130px]"}} 
           isHoverable="false"
-          className="max-w-[400px]">
+          className="min-w-[400px]">
           <CardHeader className="flex gap-3">
             <Image
               width={40}
@@ -42,5 +44,7 @@ export function SeriesEpisodes({episodes: _episodes,portada}){
         </Card>
       </Link>
       ))}
-    </section>)
+    </section>
+    </>
+    )
 }

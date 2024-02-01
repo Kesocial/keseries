@@ -1,8 +1,9 @@
 "use client"
-import { Card, CardHeader,Image,Link } from "@nextui-org/react"
+import { Card, CardHeader,Image } from "@nextui-org/react"
+import Link from "next/link"
 export function CardCustom({title,src,href,label}){
   return (
-    <Link href={href}>
+    <Link href={href} >
       <Card
         isHoverable="true"
         isPressable="true"
