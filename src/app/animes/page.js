@@ -8,7 +8,7 @@ async function getAnimes(){
     if (!animes.ok) return {ultimosEpisodios:[],recienAgregados:[]}
     return animes.json()
   } catch (error) {
-    
+    return {ultimosEpisodios:[],recienAgregados:[]}
   }
 }
 
