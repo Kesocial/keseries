@@ -1,6 +1,6 @@
 import { chromium } from 'playwright';
 import { ANIMES_PROVIDER_URL } from '@/const';
-import uuidv4 from "uuidv4"
+import { uuid } from 'uuidv4';
 class CHAnimeflv {
   constructor(url,config){
     this.url = url
@@ -69,6 +69,8 @@ class CHAnimeflv {
       let recienAgregados = CARDS2.map((el)=>getCard(el,{titleSelector:".Title",labelSelector:".Type",srcSelector:"img"}))
       return {ultimosEpisodios,recienAgregados}
     },ANIMES_PROVIDER_URL)
+    await browser.close();
+
     return animes
   }
   async getProviders({animeName}){
@@ -90,7 +92,7 @@ class CHAnimeflv {
     animeData.providers = animeData.providers.map((provider)=>{
       const providerElement = {
         ...provider,
-        id:uuidv4(),
+        id:uuid(),
       }
       return providerElement
     }).filter(Boolean)
