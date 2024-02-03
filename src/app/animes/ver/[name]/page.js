@@ -4,12 +4,12 @@ import { Carousel } from "@/components/Carousel/Carousel"
 import { EpisodeViewer } from "@/components/EpisodeViewer/EpisodeViewer"
 import { URL_BASE } from "@/const"
 async function getProviders(chapter){
-  const animes = await fetch(`${URL_BASE}api/animes/providers/${chapter}`,{next:{revalidate:1}})
+  const animes = await fetch(`${URL_BASE}api/animes/providers/${chapter}`,{next:{revalidate:60}})
   if (!animes.ok) throw new Error('Failed to fetch animes providers API')
   return animes.json()
 }
 async function getAnimeData(name){
-  const animesInfo = await fetch(`${URL_BASE}api/animes/info/${name}`,{next:{revalidate:1}})
+  const animesInfo = await fetch(`${URL_BASE}api/animes/info/${name}`,{next:{revalidate:60}})
   if (!animesInfo.ok) throw new Error('Failed to fetch animes data API')
   return animesInfo.json()
 }

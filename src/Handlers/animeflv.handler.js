@@ -1,5 +1,6 @@
 import { chromium } from 'playwright';
 import { ANIMES_PROVIDER_URL } from '@/const';
+import { v4 as uuidv4 } from 'uuid';
 class CHAnimeflv {
   constructor(url,config){
     this.url = url

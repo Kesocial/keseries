@@ -5,7 +5,7 @@ import {SeriesDescription} from "@/components/Series/SeriesDescription"
 import { URL_BASE } from "@/const"
 async function getAnime(name){
   try {
-    const animes = await fetch(URL_BASE+"api/animes/info/"+name, { next: { revalidate: 1 } })
+    const animes = await fetch(URL_BASE+"api/animes/info/"+name, { next: { revalidate: 60 } })
     if (!animes.ok) throw new Error('Failed to fetch animes API')
     return animes.json()
   } catch (error) {

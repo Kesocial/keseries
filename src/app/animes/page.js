@@ -3,7 +3,7 @@ import { TabsCustom } from "@/components/TabsCustom"
 import { ListaCards } from "@/components/Card/ListaCards"
 import { URL_BASE } from "@/const"
 async function getAnimes(){
-  const animes = await fetch(URL_BASE+"api/animes", { next: { revalidate: 0 } })
+  const animes = await fetch(URL_BASE+"api/animes", { next: { revalidate: 60 } })
   if (!animes.ok) throw new Error('Failed to fetch animes API')
   return animes.json()
 }
