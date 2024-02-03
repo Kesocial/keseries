@@ -1,6 +1,6 @@
 import { chromium } from 'playwright';
 import { ANIMES_PROVIDER_URL } from '@/const';
-import { v4 as uuidv4 } from 'uuid';
+import uuidv4 from "uuidv4"
 class CHAnimeflv {
   constructor(url,config){
     this.url = url
@@ -54,7 +54,7 @@ class CHAnimeflv {
         const title = el.querySelector(titleSelector)?.textContent
         const label = el.querySelector(labelSelector)?.textContent
         const src = el.querySelector(srcSelector)?.src
-        const href = el.href
+        const href = "animes"+ el.getAttribute("href")
         const dataCard = {
           label:label?label:"Serie",  
           title,
