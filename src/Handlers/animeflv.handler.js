@@ -54,7 +54,7 @@ class CHAnimeflv {
         const title = el.querySelector(titleSelector)?.textContent
         const label = el.querySelector(labelSelector)?.textContent
         const src = el.querySelector(srcSelector)?.src
-        const href = "animes"+ el.href
+        const href = el.href
         const dataCard = {
           label:label?label:"Serie",  
           title,
